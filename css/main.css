@@ -9,15 +9,31 @@ body {
   background-position: center;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #333;
   font-weight: 300;
 }
 
+/* container这个div是一个居中包围框 */
 .container {
   width: 960px;
-  margin: 0 auto;
+  margin: 0 auto;	/* 0 auto 让浏览器自动计算左右 margin，使外包围框居中，这个居中技巧只限于有设置宽度的容器 */
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
+/*
+你常常会看到网页选择 960px 这个宽度，这是因为 一般浏览器是 1024 宽，
+加上滚动条就是 1000-1004， 所以网页的宽度都是小于 1000。而 960 是
+1000 以内公约数最多的数字，方便做 grid。
+*/
 
 .main-header {
 	padding: 1px;
@@ -75,9 +91,13 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+/*给背景加上白色背景*/
 .info-section {
   padding: 30px 60px;
   text-align: center;
+  background-color: #fff;
+ 
+  background-size: contain;
 }
 
 .info-section header{
@@ -109,11 +129,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clearfix:after {
-    content:"";
-    display:table;
-    clear:both;
+  content:"";
+  display:table;
+  clear:both;
 }
 
+/* 技能部分 */
 
 .whatido__skill-list {
   list-style: none;
@@ -122,11 +143,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .whatido__skill {
-	float: left;
-	width: 33%;
-	background-repeat: no-repeat;
-	background-position: center top;
-	padding-top: 120px;
+  float: left;
+  width: 33%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: 120px;
 }
 
 .whatido__skill--code {
@@ -141,15 +162,112 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url(../img/skill-product.png);
 }
 
+.clearfix:after {
+  content:"";/*在 clearfix 这个元素之后加上一个空的伪元素*/
+  display:table;
+  clear:both;/*使伪元素清除飘动元素*/
+}
 
+/* 教育经历部分 */
+.education-experience__list { 
+  padding: 1px;
+  width: 840px;
+  margin: 0px auto;
+  list-style: none;
+  text-align: left;
+}
 
+.education-experience__list li {
+  margin-bottom: 30px;
+}
 
+.content {
+  padding-left: 30px;
+  overflow: hidden;
+}
+ 
+.education-experience__list li img{
+	padding-top: 10px;
+	float: left;
+	width: 180px;
+}
 
+/* 照片展示部分 */
+.photos__list { 
+  overflow: hidden;
+}
 
+.photos__list li{
+  float: left;
+  width: 25%;
+  padding: 10px;
+  overflow: hidden;
+  border-width: 1px;
+}
 
+.photos__list img {
+	width: 100%;
+}
 
+.get-in-touch__list {
+  margin: 0 auto; 
+  list-style: none;
+  overflow: hidden;
+}
 
+.get-in-touch__list li{
+  float: left;
+  width: 25%;
+  overflow: hidden;
+}
 
+/*输入表单部分*/
+.contact-form {
+  width: 40%;
+  text-align: center;
+  position: relative;	
+  margin: 0 auto;
+}
+
+.box {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact input {
+  padding: 8px;
+}
+
+.contact-form label {
+  position: absolute;
+  padding: 8px;
+  top: 5%;
+  right: 100%;
+  width: 20%;
+}
+
+.contact button {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 30px;
+  padding-top: 10px 0 0 10px;
+  border: none;
+  border-radius: 9999px;
+
+  background: #ffd524;
+
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  color: #fff;
+  box-shadow: 0 3px 0 #daae1d;
+}
 
 
 
