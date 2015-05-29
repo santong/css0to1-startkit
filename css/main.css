@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;	/* 0 auto 让浏览器自动计算左右 margin，使外包围框居中，这个居中技巧只限于有设置宽度的容器 */
   margin-top: 50px;
   margin-bottom: 100px;
+  box-shadow: 0 0px 2px 1px rgba(0,0,0,0.2);
 }
 /*
 你常常会看到网页选择 960px 这个宽度，这是因为 一般浏览器是 1024 宽，
@@ -232,6 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 .box {
   position: relative;
   padding-bottom: 10px;
+  padding-left: 10px;
 }
 
 .contact input,
